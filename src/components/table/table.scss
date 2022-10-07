@@ -1,0 +1,44 @@
+.table{
+    padding-bottom: 100px;
+    .tableCell{
+
+        .cellWrapper{
+            display: flex;
+            align-items: center;
+    
+            .image{
+                width: 50px;
+                height: 50px;
+                margin-right: 10px;
+            }
+        }
+
+
+        .status{
+            padding:5px;
+            border-radius: 10px;
+            width: 100px;
+            
+            &.purchased{
+                color:green;
+                background-color: rgba(36, 128, 0, 0.292);
+                width: 100px;
+                
+            }
+
+            &.card{
+                color:goldenrod;
+                background-color: rgba(255, 217, 0, 0.244);
+                width: 100px;
+            }
+            &.liked{
+                color:red;
+                background-color: rgba(255, 0, 0, 0.247);
+                width: 100px;
+            }
+        }
+    }
+    
+
+        
+}

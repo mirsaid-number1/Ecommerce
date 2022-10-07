@@ -1,0 +1,96 @@
+:root{
+    --sidebar-controller:none;
+    --hide-some-snavbar-items:block;
+}
+
+@media screen and (max-width:1300px) {
+    :root{
+        --sidebar-controller:block;
+    }
+}
+
+@media screen and (max-width:600px) {
+    :root{
+        --hide-some-snavbar-items:none;
+    }
+}
+
+.snavbar{
+    color: grey;
+    padding: 0 10px;
+    border-bottom: 0.5px solid rgb(230,227,227);
+    width: 100%;
+    
+    .snavbar_wrapper{
+        height: 50px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        .item{
+            display: var(--sidebar-controller);
+        }
+
+        .snavbar_search{
+            display: flex;
+            align-items: center;
+            padding:5px;
+            border: 0.5px solid rgb(230,227,227);
+            
+            input {
+                border: none;
+                outline: none;
+                background: transparent;
+                &::placeholder {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .items{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            .item{
+                display: flex;
+                align-items: center;
+                margin-right: 10px;
+                position: relative;
+                cursor: pointer;
+                
+                .icon{
+                    font-size: 20px;
+                }
+
+                .avatar{
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+
+                .counter{
+                    background-color: red;
+                    width: 15px;
+                    height: 15px;
+                    color: white;
+                    font-size: 10px;
+                    font-weight: bold;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top:-5px;
+                    right: -5px;
+                    border-radius: 50%;
+                }
+
+                &.one,&.two,&.three{
+                    display: var(--hide-some-snavbar-items);
+                }
+            }
+        }
+    }
+}
