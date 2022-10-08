@@ -34,7 +34,7 @@ function Cart() {
             })
         });
 
-        setQty([...Array(cards?.card.length).fill(1)]);
+        setQty([...Array(cards?.card?.length).fill(1)]);
         setReadyCards(arr);
         refetch()
     },[isFetched,refresh])

@@ -86,10 +86,7 @@ function Product() {
   ]
   let [stars,setStars] = useState([{s:'true'},{s:'false'},{s:'false'},{s:'false'},{s:'false'}])
   let [block, setBlock] = useState(false);
-  
-  // let starsOfProduct = product?.rating?.stars / product?.rating?.users.length;
-  // let lightning = product?.rating?.users.find((item,index) => {return item.uid == state.userId ? setRatedProduct(item.mark) : index});
- 
+
   function highlightStar(id) {
       
       if(block){
@@ -384,7 +381,7 @@ function choosePhoto(index) {
                 </div>
                 <div className='reactions'>
                 <button className='buy' onClick={() => addCard(product?.main_img,product?.name,productID)}><Icon icon="wpf:luggage-trolley" color={"#40bfff"} width="25" height="25" className='icon'/> Add to card</button>
-                <button className='like' onClick={() => {insertLike();addLiked(product?.main_img,product?.name,productID)}}>{user?.liked.includes(productID) ? <Icon icon="bi:heart-fill"  className='icon' color="red" width="25" height="25" /> : <Icon icon="akar-icons:heart" width="25" height="25" className='icon' color={"#40bfff"}/>}</button>
+                <button className='like' onClick={() => {insertLike();addLiked(product?.main_img,product?.name,productID)}}>{user?.liked?.includes(productID) ? <Icon icon="bi:heart-fill"  className='icon' color="red" width="25" height="25" /> : <Icon icon="akar-icons:heart" width="25" height="25" className='icon' color={"#40bfff"}/>}</button>
                 </div>
               </div>
               <span className='border'></span>
@@ -532,7 +529,7 @@ function choosePhoto(index) {
               {product?.name}
             </span>
             <span style={{width:'25px',height:'25px',cursor:'pointer'}}>
-              {user?.liked.includes(productID) ? <Icon icon="bi:heart-fill"  className='icon' color="red" width="25" height="25"  onClick={() => {insertLike(); addLiked(product?.main_img,product?.name,productID)}}/> : <Icon icon="akar-icons:heart" width="25" height="25" className='icon' color={"#40bfff"}  onClick={() => {insertLike(); addLiked(product?.main_img,product?.name,productID)}}/>}
+              {user?.liked?.includes(productID) ? <Icon icon="bi:heart-fill"  className='icon' color="red" width="25" height="25"  onClick={() => {insertLike(); addLiked(product?.main_img,product?.name,productID)}}/> : <Icon icon="akar-icons:heart" width="25" height="25" className='icon' color={"#40bfff"}  onClick={() => {insertLike(); addLiked(product?.main_img,product?.name,productID)}}/>}
             </span>
           </div>
           <div className='star_rating'>   

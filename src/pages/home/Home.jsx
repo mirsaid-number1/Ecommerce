@@ -85,7 +85,7 @@ function Home({bgImage,productPng}) {
   function addLiked(image,name,productID) {
     let userDoc = doc(db,'users',localStorage.getItem('userId'));
 
-    if(!user?.liked.includes(productID)) {
+    if(!user?.liked?.includes(productID)) {
         updateDoc(userDoc,{
             notification:{
                 cards:[...user?.notification?.cards,{img:image,name,type:'liked'}],
@@ -105,7 +105,7 @@ function Home({bgImage,productPng}) {
   function addCard(image,name,productID) {
     let userDoc = doc(db,'users',localStorage.getItem('userId'));
 
-      if(!user?.card.includes(productID)) {
+      if(!user?.card?.includes(productID)) {
         updateDoc(userDoc,{
           notification:{
             cards:[...user?.notification?.cards,{img:image,name,type:'card'}],
