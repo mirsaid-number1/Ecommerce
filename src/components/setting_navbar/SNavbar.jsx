@@ -50,7 +50,7 @@ function SNavbar({setSidebar}) {
           <div className="item three">
             <Link to='/user/messenger'>
               <ModeCommentIcon className='icon'/>
-              {user?.message.type == 'on' ? 
+              {user?.message?.type == 'on' ? 
                 <div className="counter">{user?.message.number}</div> : null
               }
             </Link>
